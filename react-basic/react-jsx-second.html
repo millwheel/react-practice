@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="root"></div>
+</body>
+<script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script type="text/babel">
+    const root = document.getElementById("root");
+    // JSX
+    const Title = () => {
+        return(
+            <h3 id="title" onMouseEnter={() => console.log("mouse enter")}>
+                Hello I am a title
+            </h3>
+        );
+    }
+    const Button = () => {
+        return (
+            <button style={{backgroundColor: "green"}} onClick={() => console.log("i am clicked")}>
+                Click me
+            </button>
+        );
+    }
+    const Container = () => (
+        // Should be uppercase
+        <div>
+            <Title/>
+            <Button/>
+        </div>
+        // if you set it as lowercase, it can be treated as html tag.
+    );
+    function render(){
+        ReactDOM.render(<Container />, root);
+    }
+    render();
+</script>
+</html>

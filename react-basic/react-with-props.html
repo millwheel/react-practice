@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="root"></div>
+</body>
+<script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script type="text/babel">
+    // props는 부모 컴포넌트에서 자식 컴포넌트로 데이터(property)를 보내는 방법이다.
+    const Btn = (props) => {
+        return <button style={{
+            backgroundColor: "#2F0FF2",
+            color:"white",
+            padding: "10px 20px",
+            border: 0,
+            borderRadius:10
+        }}>{props.banana}</button>;
+    }
+    const App = () => {
+        return (
+            <div>
+                <Btn banana="Save changes"/>
+                <Btn banana="Confirm"/>
+            </div>
+        )
+    }
+    const root = document.getElementById("root");
+    ReactDOM.render(<App />, root);
+</script>
+</html>
